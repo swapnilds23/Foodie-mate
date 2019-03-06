@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title href="index.html">Foodie Mate</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./stylesheets/styling.css">
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar">
+
+    <div class="container">
+
+      <h1 class="logo"><a href="index.html">Foodie Mate</a></h1>
+      <ul class="nav nav-right">
+        <li class="active">
+          <a href="index.html">Home</a>
+        </li>
+        <li data-target="#aboutModal" data-toggle="modal">
+          <a href="#">About</a>
+        </li>
+        <li id="myfoodbutton">
+          <a href="#">My Food</a>
+        </li>
+        <li id="signupbutton" data-target="#signupModal" data-toggle="modal">
+          <a href="#">Signup</a>
+        </li>
+        <li id="loginbutton" data-target="#loginModal" data-toggle="modal">
+          <a href="#">Login</a>
+        </li>
+        <li id="logoutbutton" data-logout="logout">
+          <a href="#">Logout</a>
+        </li>
+        <li id="addSubmission" data-target="#submissionModal" data-toggle="modal">
+          <a href="#">Add Post</a>
+        </li>
+      </ul>
+    </div>
+    <!--/.container-->
+
+  </nav>
+  <!--/.navbar-->
+
+
+  <div class="container">
+
+    <div id="search-container" class="row">
+      <input type="text" name="city" id="searchItems" placeholder="Search for tags, food items etc." />
+      <button id="searchButton">Search</button>
+    </div>
+    <section id="eventsGallery">
+    </section>
+  </div>
+  <!--/.container-->
+
+  <!-- Toast -->
+
+  <div id="snackbar"></div>
+
+  <!-- Toast end -->
+
+  <!-- Modals -->
+
+  <!--Sign up form-->
+  <form id="signupform" data-signup="form">
+
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+          </div>
+          <div class="modal-body">
+
+            <div id="signupmessage"></div>
+
+            <div class="form-group">
+              <label for="username" class="sr-only">Username:</label>
+              <input class="form-control" required type="text" id="username" name="username" placeholder="Username" maxlength="30">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="sr-only">Email:</label>
+              <input class="form-control" required type="email" id="email" name="email" placeholder="Email Address" maxlength="50">
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="sr-only">Choose a password:</label>
+              <input class="form-control" required type="password" id="password" name="password" placeholder="Choose a password" maxlength="30">
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="sr-only">Confirm password:</label>
+              <input class="form-control" required type="password" id="password2" name="password2" placeholder="Confirm password" maxlength="30">
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <input class="btn btn-primary" name="signup" type="submit" value="Sign up">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+  <!--Login form-->
+
+  <form id="loginform" data-login="form">
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel1">Login:</h4>
+          </div>
+          <div class="modal-body">
+
+            <div class="alert alert-danger" id="loginmessage"></div>
+
+            <div class="form-group">
+              <label for="loginemail1" class="sr-only">Username:</label>
+              <input class="form-control" required type="text" id="loginemail1" name="loginemail1" placeholder="Username">
+            </div>
+
+            <div class="form-group">
+              <label for="loginpassword1" class="sr-only">Password</label>
+              <input class="form-control" required type="password" id="loginpassword1" name="loginpassword1" placeholder="Password">
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <input class="btn btn-success" name="login" id="login" type="submit" value="Login">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- >
+
+  <!--Submission form-->
+
+  <div class="modal fade" id="submissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel2">Add Post:</h4>
+        </div>
+        <form id="submissionform" data-submission="form">
+          <div class="modal-body">
+
+            <div class="col-lg-6">
+              <div class="avatar-upload">
+                <div class="avatar-edit">
+                  <input type="file" name="imageUpload" id="imageUpload" accept=".png, .jpg, .jpeg" />
+                  <label for="imageUpload"></label>
+                </div>
+                <div class="avatar-preview">
+                  <div id="imagePreview" style="background-image: url(./assets/Blank_Pic.png);">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 detsForm">
+              <div class="form-group" style="display:none;">
+                <label for="uid">Uid:</label>
+                <input disabled class="form-control" required type="text" id="uid" name="uid">
+              </div>
+
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input required class="form-control" type="text" id="name" name="name" placeholder="Name">
+              </div>
+
+              <div class="form-group">
+                <label for="tags">Tags:</label>
+                <input required class="form-control" type="text" id="tags" name="tags" placeholder="tagA,tagB,tagC">
+              </div>
+
+              <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea required rows="5" class="form-control" name="description" id="description" placeholder="Enter some description about your submission..!"></textarea>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <input class="btn btn-success" name="submission" id="submission" type="submit" value="Submit">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- >
+
+  <! Comment modal-->
+  <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="col-sm-12">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="cls"><span aria-hidden="true">&times;</span></button>
+          </div>
+        </div>
+        <div class="modal-body" id="bdy">
+          <div class="row">
+            <div class="col-sm-8 align-items-center" id="div1">
+            </div>
+
+            <div class="col-sm-4" id="div2">
+              <div id="div3">
+              </div>
+              <div id="div4">
+              </div>
+              <br/>
+              <!--<img id="like" src="./assets/2.png" /><img id="comments" src="./assets/comments.png" hspace="20" /><h4 id="commentCount"></h4>-->
+              <div class="row likeCommentRow">
+                <div id="div7"></div><span id="likeCount"></span><img id="comments" src="./assets/comments.png" hspace="20" /><span id="commentCount"></span>
+              </div>
+              <br/>
+              <div class="content">
+                <div class="header">
+                  Comments
+                </div>
+                <div class="comments">
+                  <div class="editor">
+
+                    <div id="commentBox">
+                    </div>
+                    <div id="list-comments">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- >
+
+  <!--Edit submission form-->
+
+  <div class="modal fade" id="editSubmissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel3">Edit Post:</h4>
+        </div>
+        <form id="editSubmissionform" data-editsubmission="form">
+          <div class="modal-body">
+
+            <div class="col-lg-6">
+              <div class="avatar-upload">
+                <div class="avatar-edit">
+                  <input type="file" name="imageUpload1" id="imageUpload1" accept=".png, .jpg, .jpeg" />
+                  <label for="imageUpload1"></label>
+                </div>
+                <div class="avatar-preview">
+                  <div id="imagePreview1" style="background-image: url(./assets/Blank_Pic.png);">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 detsForm">
+              <div class="form-group" style="display:none;">
+                <label for="uid1">Uid:</label>
+                <input disabled class="form-control" required type="text" id="uid1" name="uid1">
+              </div>
+
+              <div class="form-group">
+                <label for="name1">Name:</label>
+                <input required class="form-control" type="text" id="name1" name="name1" placeholder="Name">
+              </div>
+
+              <div class="form-group">
+                <label for="tags1">Tags:</label>
+                <input required class="form-control" type="text" id="tags1" name="tags1" placeholder="tagA,tagB,tagC">
+              </div>
+
+              <div class="form-group">
+                <label for="description1">Description:</label>
+                <textarea required rows="5" class="form-control" name="description1" id="description1" placeholder="Enter some description about your submission..!"></textarea>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="modal-footer">
+            <input class="btn btn-success" name="submission1" id="submission1" type="submit" value="Submit">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- >
+
+  <!-- About modal -->
+
+  <!-- About page -->
+  <form id="aboutForm" data-login="form">
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            <h1 class="modal-title text-center" id="modalTitle"><strong>Overview</strong></h1>
+          </div>
+
+          <div class="modal-body text-center">
+            <hr>FoodRun is CSUF's leading online food rating website created for professor Avery's front-end engineering class. FoodRun allows food critics all over the world discover recipes, food inspiration, and rate pictures you love! In addition to reviews,
+            you may also use FoodRun in order to upload your own pictures and receive feedback and comments.
+            <hr>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- -->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="scripts/editFood.js" charset="utf-8"></script>
+  <script src="scripts/accountManagement.js" charset="utf-8"></script>
+  <script src="scripts/postHandling.js" charset="utf-8"></script>
+  <script src="scripts/snackbar.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+  <script src="scripts/search.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>

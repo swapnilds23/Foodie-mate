@@ -1,0 +1,629 @@
+body {
+  font-family: 'Roboto ', sans-serif;
+  font-size: 14px;
+  color: #212121;
+  line-height: 1.4;
+  background-color: #dadada;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+/*
+* Navbar related styling
+*/
+
+.navbar {
+  width: 100%;
+  height: auto;
+  background-color: #2196F3;
+}
+
+.logo, .nav {
+  display: inline-block;
+  margin: 0;
+}
+
+.nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.navbar a {
+  color: #FFF;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: transparent;
+}
+
+.nav-right {
+  float: right;
+  line-height: 39px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2em;
+  margin-top: 13.5px !important;
+}
+
+/* responsive */
+
+@media screen and (max-width: 677px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*
+* Navbar related styling end
+*/
+
+/*
+* Image grid related styling
+*/
+
+#search-container {
+  margin: 0 auto 20px auto;
+  background-color: rgba(255, 255, 255, 0.55);
+  padding: 20px;
+  clear: both;
+}
+
+#eventsGallery {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  height: 79vh;
+  overflow-y: auto;
+}
+
+/*format image Name*/
+
+.imgName {
+  text-align: left;
+  text-decoration: none;
+  font-size: 1.10em;
+  float: left;
+  display: block;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.likeComment {
+  float: right;
+}
+
+/*format image description*/
+
+.imgDescription {
+  color: black;
+  text-align: left;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.foodImg {
+  width: 270px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.foodCaption {
+  color: #333;
+  padding: 3px;
+  overflow: hidden;
+}
+
+/*format thumbnail*/
+
+.thumbnail {
+  position: relative;
+  padding: 0px;
+  margin: 5px auto;
+  max-width: 270px;
+  min-width: 270px;
+}
+
+/*img size*/
+
+.thumbnail img {
+  height: 180px;
+  width: 270px;
+  object-fit: cover;
+}
+
+/*hover*/
+
+#eventsGallery .thumbnail:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
+}
+
+/*
+* Image grid related styling end
+*/
+
+/*
+* Common Modal related
+*/
+
+.modal-content {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+#submissionModal .modal-body {
+  /*height: 340px; */
+  position: relative;
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 15px;
+}
+
+#editSubmissionModal .modal-body {
+  height: 340px;
+}
+
+/*
+* Common Modal related end
+*/
+
+/*
+* Common Form elements related
+*/
+
+.col-md-3 {
+  padding: 0px;
+}
+
+input.form-control {
+  border-radius: 0px;
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+#loginmessage, #submissionMessage {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+#search-container input {
+  width: 85%;
+  padding: 10px;
+  border-radius: 0px;
+  border: 0;
+}
+
+#search-container button {
+  width: 14.4%;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 0px;
+  border: 0;
+  /*cursor: not-allowed;*/
+}
+
+/*
+* Common Form elements related end
+*/
+
+/*
+* Submission form elements related
+*/
+
+.avatar-upload {
+  position: relative;
+  max-width: 205px;
+  margin: 50px auto;
+}
+
+.avatar-upload .avatar-edit {
+  position: absolute;
+  right: 12px;
+  z-index: 1;
+  top: 10px;
+}
+
+.avatar-upload .avatar-edit input {
+  display: none;
+}
+
+.avatar-upload .avatar-edit input+label {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input+label:hover {
+  background: #f1f1f1;
+  border-color: #d6d6d6;
+}
+
+.avatar-upload .avatar-edit input+label:after {
+  content: "+";
+  color: #757575;
+  font-size: 2em;
+  font-weight: bold;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+  width: 192px;
+  height: 192px;
+  position: relative;
+  border-radius: 100%;
+  border: 6px solid #F8F8F8;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-upload .avatar-preview>div {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.detsForm {
+  padding-top: 5px;
+}
+
+/*
+* Submission form elements related end
+*/
+
+/*
+* snackbar
+*/
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+
+#snackbar {
+  visibility: hidden;
+  /* Hidden by default. Visible on click */
+  min-width: 600px;
+  /* Set a default minimum width */
+  background-color: #333;
+  /* Black background color */
+  color: #fff;
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  margin-left: -300px;
+  /* Negative half of width. */
+  left: 50%;
+  top: 30px;
+  /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+
+#snackbar.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+  animation: fadein 0.5s, fadeout 0.5s 4.5s;
+  z-index: 100000;
+}
+
+/* Animations to fade the snackbar in and out */
+
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+/*
+* snackbar end
+*/
+
+/*
+* comment related
+*/
+
+#eventImg1 {
+  object-fit: contain;
+  position: absolute;
+  max-width: 90%;
+  max-height: 90%;
+  height: auto;
+  width: auto;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#like {
+  width: 37px;
+  height: 30px;
+  display: inline-block;
+}
+
+#commentCount {
+  width: 37px;
+  height: 30px;
+  display: inline-block;
+}
+
+#div7 {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+#div3 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#div4 {
+  font-size: 0.9em;
+  max-height: 240px;
+  overflow-y: auto;
+  margin-bottom: 0px;
+  padding-right: 3px;
+}
+
+#newLike {
+  width: 37px;
+  height: 30px;
+  display: inline-block;
+}
+
+#comments {
+  width: 35px;
+  height: 30px;
+  display: inline-block;
+}
+
+.comments {
+  margin: auto;
+}
+
+.insert-text {
+  position: relative;
+}
+
+.insert-text .loading {
+  position: absolute;
+  bottom: -25px;
+  display: none;
+}
+
+.insert-text .total-comment {
+  position: absolute;
+  bottom: -25px;
+  right: 0px;
+}
+
+.insert-text .total-comment:before {
+  content: "Total comment: ";
+  font-weight: bold;
+}
+
+.list-comments {
+  margin-top: 30px;
+  padding-top: 10px;
+  background: #f0f0f0;
+  overflow-y: auto;
+}
+
+.header {
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.eachComment {
+  padding-top: 10px;
+  margin: 10 auto;
+}
+
+#data1 {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-color: white;
+  margin-left: 10px;
+  border-radius: 20px;
+}
+
+.editor {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.content {
+  overflow-y: auto;
+  height: 245px;
+  border: 1px solid grey;
+}
+
+.editor-content {
+  width: 92%;
+  outline: none;
+  min-height: 30px;
+  background: #f9f9f9;
+  margin: 10px 10px 10px 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.editor-content:focus {
+  background: #fff;
+}
+
+#commentModal .modal-dialog {
+  width: 85%;
+  min-height: 800px;
+}
+
+.modal-backdrop {
+  opacity: 0.9 !important;
+}
+
+.centeImage {
+  display: block;
+  margin: auto;
+  object-fit: contain;
+}
+
+#commentModal .modal-body {
+  padding-top: 25px;
+}
+
+.padClass {
+  padding-bottom: 20px;
+}
+
+#bdy {
+  padding-bottom: 30px;
+}
+
+#lk, #ck, #lk1, #ck1 {
+  padding-left: 5px;
+  display: none;
+}
+
+#cls {
+  font-size: 2em;
+}
+
+#cls1 {
+  background: transparent;
+  opacity: 0;
+}
+
+#cls1:hover {
+  opacity: 1;
+}
+
+#div1 {
+  position: relative;
+  min-height: 700px;
+  max-height: 90%;
+  height: auto;
+}
+
+#aboutModal .modal-body {
+  width: 100%;
+  height: 200px;
+  padding: 10px solid #000;
+}

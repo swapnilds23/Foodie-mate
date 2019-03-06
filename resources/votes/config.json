@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"submissionId": {
+			"name": "submissionId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "submissionId",
+			"order": 0
+		},
+		"userId": {
+			"name": "userId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "userId",
+			"order": 1
+		},
+		"vote": {
+			"name": "vote",
+			"type": "number",
+			"typeLabel": "number",
+			"required": true,
+			"id": "vote",
+			"order": 2
+		}
+	}
+}
